@@ -2,12 +2,21 @@ version: '3.2'
 
 services:
 
-  web:
+  backend:
     build: 
       context: ASP.NET WebApp\ASP.NET WebApp\ASP.NET WebApp
       dockerfile: Dockerfile
     ports:
      - "5000:5555"
+    networks:
+      - aspnetcoreapp-network
+
+  frontend:
+    build: 
+      context: NodeJs WebApp
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5555"
     networks:
       - aspnetcoreapp-network
 
