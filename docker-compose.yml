@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+
+  web:
+    build: 
+      context: ASP.NET WebApp\ASP.NET WebApp\ASP.NET WebApp
+      dockerfile: Dockerfile
+    ports:
+     - "5000:5555"
+    networks:
+      - aspnetcoreapp-network
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "<YourStrong@Passw0rd>"
+    volumes:
+      - data:/var/opt/mssql/data
+    ports:
+      - "1433:1433"
+    networks:
+      - aspnetcoreapp-network
+volumes:
+  data:
+
+networks:
+  aspnetcoreapp-network:
+    driver: bridge
