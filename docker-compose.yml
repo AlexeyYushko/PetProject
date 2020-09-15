@@ -4,7 +4,7 @@ services:
 
   backend:
     build: 
-      context: ASP.NET WebApp\ASP.NET WebApp\ASP.NET WebApp
+      context: ASP.NET WebApp\ASP.NET WebApp
       dockerfile: Dockerfile
     ports:
      - "5000:5555"
