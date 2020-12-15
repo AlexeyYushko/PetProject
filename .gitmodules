@@ -1,0 +1,4 @@
+[submodule "ASP.NET WebApp"]
+	url = git@github.com:AlexeyYushko/Accounting-back.git
+[submodule "NodeJs WebApp"]
+	url = git@github.com:AlexeyYushko/Accounting-front.git
