@@ -27,7 +27,7 @@ if ($arg0 -eq 'u')
     }
 
     #angularapp-nodejs - custom built image from dockerfile within nodejs directory
-    docker run --rm --name angularapp -p 5300:4200 -v "${pwd}/NodeJs WebApp/angularapp:/var/www" -w "/var/www" angularapp-nodejs
+    docker run --rm --name angularapp -p 4200:4200 -v "${pwd}/NodeJs WebApp/angularapp:/var/www" -w "/var/www" angularapp-nodejs
 }
 
 if ($arg0 -eq 'd')
