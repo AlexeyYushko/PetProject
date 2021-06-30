@@ -19,15 +19,15 @@ if ($arg0 -eq 'u')
     if ($arg1 -eq 'dev')
     {
         docker-compose -f docker-compose.dev.yml up -d
+
+        #angularapp-nodejs - custom built image from dockerfile within nodejs directory
+        docker run --rm --name angularapp -p 4200:4200 -v "${pwd}/NodeJs WebApp/angularapp:/var/www" -w "/var/www" angularapp-nodejs
     }
 
     if ($arg1 -eq 'prod')
     {
         docker-compose -f docker-compose.yml up -d
     }
-
-    #angularapp-nodejs - custom built image from dockerfile within nodejs directory
-    docker run --rm --name angularapp -p 4200:4200 -v "${pwd}/NodeJs WebApp/angularapp:/var/www" -w "/var/www" angularapp-nodejs
 }
 
 if ($arg0 -eq 'd')

@@ -11,14 +11,14 @@ services:
     networks:
       - aspnetcoreapp-network
 
-  # frontend:
-  #   build: 
-  #     context: NodeJs WebApp
-  #     dockerfile: Dockerfile.dev
-  #   ports:
-  #     - "5200:4200"
-  #   networks:
-  #     - aspnetcoreapp-network
+  frontend:
+    build: 
+      context: NodeJs WebApp
+      dockerfile: Dockerfile
+    ports:
+      - "5200:80"
+    networks:
+      - aspnetcoreapp-network
 
   mssql:
     image: mcr.microsoft.com/mssql/server:2017-latest
